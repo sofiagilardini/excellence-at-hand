@@ -1,79 +1,96 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  line-height: 1.6;
-  background: #fafafa;
-  color: #333;
+:root{
+  --ink:#0d1b2a;        /* deep navy */
+  --gold:#f4d35e;       /* accent */
+  --bg:#fafafa;         /* page background */
+  --muted:#6c7a89;      /* secondary text */
+  --card:#ffffff;       /* cards */
+  --maxw:1100px;
 }
 
-header {
-  background: #0d1b2a;
-  color: white;
-  padding: 20px;
-  text-align: center;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6; color:#333; background:var(--bg);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.2em;
+/* Header / Nav */
+.site-header{
+  background:var(--card); border-bottom:1px solid #e6e8eb;
+  position:sticky; top:0; z-index:10;
+}
+.nav-wrap{
+  max-width:var(--maxw); margin:0 auto; padding:14px 20px;
+  display:flex; align-items:center; gap:18px;
+}
+.logo{
+  width:48px; height:48px; border-radius:10px; object-fit:cover; flex:0 0 auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+.brand{
+  display:flex; flex-direction:column; line-height:1.1;
+}
+.brand .title{font-weight:800; color:var(--ink); font-size:1.1rem; letter-spacing:.2px}
+.brand .subtitle{color:var(--muted); font-size:.85rem}
+nav{margin-left:auto; display:flex; gap:18px; align-items:center}
+nav a{
+  color:var(--ink); text-decoration:none; font-weight:600; padding:8px 10px; border-radius:8px;
+}
+nav a:hover{background:#eef2f6}
+nav a.active{color:var(--ink); border-bottom:2px solid var(--gold)}
+
+/* Hero */
+.hero{
+  background:linear-gradient(180deg,#e9ecef, #f3f5f7);
+  border-bottom:1px solid #e6e8eb;
+}
+.hero-inner{
+  max-width:var(--maxw); margin:0 auto; padding:60px 20px;
+  display:grid; grid-template-columns:1.2fr; gap:12px; text-align:center;
+}
+.hero h1{color:var(--ink); font-size:2rem; margin:.2rem 0}
+.hero p{color:#424b57; margin:0 auto; max-width:760px}
+.cta{
+  display:inline-block; margin-top:18px; padding:12px 20px;
+  background:var(--gold); color:#000; font-weight:800; text-decoration:none; border-radius:10px;
+  box-shadow:0 2px 0 rgba(0,0,0,.07);
+}
+.cta:hover{transform:translateY(-1px)}
+
+/* Sections / Cards */
+.section{max-width:var(--maxw); margin:0 auto; padding:40px 20px}
+.section h2{color:var(--ink); margin:0 0 14px}
+.lead{color:#424b57; margin-top:0}
+
+.cards{
+  display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.card{
+  background:var(--card); border:1px solid #e8eaee; border-radius:14px; padding:18px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.card h3{margin-top:0; color:var(--ink)}
+.badge{display:inline-block; background:#eef2f6; color:#213044; padding:4px 8px; border-radius:999px; font-size:.8rem; font-weight:700}
+
+/* Team */
+.team{
+  display:grid; grid-template-columns:320px 1fr; gap:28px;
+}
+.headshot{
+  width:100%; max-width:320px; aspect-ratio:1/1; object-fit:cover; border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08); border:1px solid #e6e8eb; background:#fff;
 }
 
-.subtitle {
-  font-weight: 300;
-  margin: 5px 0 15px;
+/* Footer */
+footer{
+  border-top:1px solid #e6e8eb; color:#7b8896;
+  background:var(--card);
 }
+.footer-inner{max-width:var(--maxw); margin:0 auto; padding:18px 20px; text-align:center; font-size:.92rem}
 
-nav a {
-  margin: 0 10px;
-  color: #f4d35e;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-#hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: #e9ecef;
-}
-
-#hero h2 {
-  font-size: 1.6em;
-  margin-bottom: 10px;
-}
-
-.cta {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #f4d35e;
-  color: #0d1b2a;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 20px;
-}
-
-.cta:hover {
-  background: #ffc300;
-}
-
-section {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h2 {
-  color: #0d1b2a;
-}
-
-footer {
-  background: #0d1b2a;
-  color: #ccc;
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9em;
+/* Responsive tweaks */
+@media (max-width:800px){
+  .team{grid-template-columns:1fr}
+  .hero-inner{padding:48px 16px}
+  .brand .title{font-size:1rem}
 }

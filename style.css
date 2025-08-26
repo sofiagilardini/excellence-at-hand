@@ -1,96 +1,99 @@
 :root{
-  --ink:#0d1b2a;        /* deep navy */
-  --gold:#f4d35e;       /* accent */
-  --bg:#fafafa;         /* page background */
-  --muted:#6c7a89;      /* secondary text */
-  --card:#ffffff;       /* cards */
-  --maxw:1100px;
+  --ink:#0d1b2a;     /* deep navy */
+  --gold:#c9a646;    /* refined accent */
+  --text:#2f3440;    /* body text */
+  --muted:#6b7380;   /* secondary */
+  --bg:#fafafa;      /* page bg */
+  --card:#ffffff;    /* surfaces */
+  --maxw:1080px;
+  --radius:14px;
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height:1.6; color:#333; background:var(--bg);
+  font-family: ui-sans-serif,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;
+  line-height:1.65; color:var(--text); background:var(--bg);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+h1,h2,h3,.brand .title{
+  font-family: "Georgia", "Times New Roman", serif;
+  letter-spacing:.1px;
 }
 
-/* Header / Nav */
+/* Header */
 .site-header{
-  background:var(--card); border-bottom:1px solid #e6e8eb;
-  position:sticky; top:0; z-index:10;
+  background:var(--card);
+  border-bottom:1px solid #e6e8ee;
 }
 .nav-wrap{
   max-width:var(--maxw); margin:0 auto; padding:14px 20px;
-  display:flex; align-items:center; gap:18px;
+  display:flex; align-items:center; gap:14px;
 }
+.brand-wrap{display:flex; align-items:center; gap:12px; text-decoration:none}
 .logo{
-  width:48px; height:48px; border-radius:10px; object-fit:cover; flex:0 0 auto;
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  width:44px; height:44px; border-radius:10px; object-fit:cover; flex:0 0 auto;
+  box-shadow:0 1px 2px rgba(0,0,0,.06);
 }
-.brand{
-  display:flex; flex-direction:column; line-height:1.1;
-}
-.brand .title{font-weight:800; color:var(--ink); font-size:1.1rem; letter-spacing:.2px}
-.brand .subtitle{color:var(--muted); font-size:.85rem}
-nav{margin-left:auto; display:flex; gap:18px; align-items:center}
+.brand{display:flex; line-height:1.1}
+.brand .title{color:var(--ink); font-weight:700; font-size:1.05rem}
+.brand .subtitle{color:var(--muted); font-size:.86rem}
+
+nav{margin-left:auto; display:flex; gap:6px}
 nav a{
-  color:var(--ink); text-decoration:none; font-weight:600; padding:8px 10px; border-radius:8px;
+  text-decoration:none; color:#233148; font-weight:600;
+  padding:10px 12px; border-radius:10px;
 }
-nav a:hover{background:#eef2f6}
-nav a.active{color:var(--ink); border-bottom:2px solid var(--gold)}
+nav a:hover{background:#eef2f7}
+nav a.active{border-bottom:2px solid var(--gold)}
 
 /* Hero */
 .hero{
-  background:linear-gradient(180deg,#e9ecef, #f3f5f7);
-  border-bottom:1px solid #e6e8eb;
+  background:linear-gradient(180deg,#f6f8fb,#f2f5f9);
+  border-bottom:1px solid #e6e8ee;
 }
 .hero-inner{
-  max-width:var(--maxw); margin:0 auto; padding:60px 20px;
-  display:grid; grid-template-columns:1.2fr; gap:12px; text-align:center;
+  max-width:var(--maxw); margin:0 auto; padding:64px 20px; text-align:center;
 }
-.hero h1{color:var(--ink); font-size:2rem; margin:.2rem 0}
-.hero p{color:#424b57; margin:0 auto; max-width:760px}
-.cta{
-  display:inline-block; margin-top:18px; padding:12px 20px;
-  background:var(--gold); color:#000; font-weight:800; text-decoration:none; border-radius:10px;
-  box-shadow:0 2px 0 rgba(0,0,0,.07);
-}
-.cta:hover{transform:translateY(-1px)}
+.hero h1{color:var(--ink); margin:.2rem 0; font-size:2rem}
+.lead{color:#445066; max-width:760px; margin:0 auto}
 
-/* Sections / Cards */
-.section{max-width:var(--maxw); margin:0 auto; padding:40px 20px}
+/* Sections */
+.section{max-width:var(--maxw); margin:0 auto; padding:42px 20px}
 .section h2{color:var(--ink); margin:0 0 14px}
-.lead{color:#424b57; margin-top:0}
-
 .cards{
-  display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
 .card{
-  background:var(--card); border:1px solid #e8eaee; border-radius:14px; padding:18px;
-  box-shadow:0 1px 2px rgba(0,0,0,.04);
+  background:var(--card); border:1px solid #e8eaee; border-radius:var(--radius); padding:18px;
+  box-shadow:0 1px 2px rgba(0,0,0,.03);
 }
-.card h3{margin-top:0; color:var(--ink)}
-.badge{display:inline-block; background:#eef2f6; color:#213044; padding:4px 8px; border-radius:999px; font-size:.8rem; font-weight:700}
+.card h3{margin:0 0 6px; color:#17233c}
+.badge{display:inline-block; background:#eef2f6; color:#213044; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700}
+
+/* Two-column split (for team page intro or feature rows) */
+.split{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:start}
+.quote{
+  background:#fff; border:1px solid #e8eaee; border-radius:var(--radius); padding:18px; color:#1b2540; font-style:italic;
+}
 
 /* Team */
-.team{
-  display:grid; grid-template-columns:320px 1fr; gap:28px;
-}
+.team{display:grid; grid-template-columns:320px 1fr; gap:28px}
 .headshot{
   width:100%; max-width:320px; aspect-ratio:1/1; object-fit:cover; border-radius:16px;
-  box-shadow:0 8px 24px rgba(0,0,0,.08); border:1px solid #e6e8eb; background:#fff;
+  box-shadow:0 8px 22px rgba(0,0,0,.08); border:1px solid #e6e8eb; background:#fff;
 }
 
 /* Footer */
-footer{
-  border-top:1px solid #e6e8eb; color:#7b8896;
-  background:var(--card);
-}
-.footer-inner{max-width:var(--maxw); margin:0 auto; padding:18px 20px; text-align:center; font-size:.92rem}
+footer{border-top:1px solid #e6e8eb; background:#fff}
+.footer-inner{max-width:var(--maxw); margin:0 auto; padding:18px 20px; text-align:center; color:#7b8896; font-size:.95rem}
 
-/* Responsive tweaks */
-@media (max-width:800px){
-  .team{grid-template-columns:1fr}
-  .hero-inner{padding:48px 16px}
-  .brand .title{font-size:1rem}
+/* Buttons */
+.cta{
+  display:inline-block; padding:12px 18px; background:var(--gold); color:#1d1d1d;
+  font-weight:800; text-decoration:none; border-radius:12px;
 }
+.cta.ghost{background:#fff; border:1px solid #e4e7ee}
+
+/* Responsive */
+@media (max-width:900px){ .split{grid-template-columns:1fr} .team{grid-template-columns:1fr} }

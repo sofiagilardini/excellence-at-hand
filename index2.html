@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Excellence at Hand – Tutors & University Preparation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a2332;
+      --primary-light: #2d3a4b;
+      --accent: #c9a96e;
+      --accent-light: #e8d5b7;
+      --text: #2c3e50;
+      --text-light: #5a6c7d;
+      --bg: #fefefe;
+      --bg-muted: #f8f9fb;
+      --border: #e8eef7;
+      --shadow: rgba(26, 35, 50, 0.08);
+      --shadow-medium: rgba(26, 35, 50, 0.12);
+      --shadow-strong: rgba(26, 35, 50, 0.2);
+      --max-width: 1200px;
+      --border-radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      font-weight: 400;
+    }
+
+    .serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(254, 254, 254, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--primary);
+      transition: opacity 0.3s ease;
+    }
+
+    .brand:hover {
+      opacity: 0.8;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid var(--accent-light);
+      transition: transform 0.3s ease;
+      background: linear-gradient(135deg, #1a2332, #2d3a4b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .brand:hover .logo {
+      transform: scale(1.05);
+    }
+
+    .brand-text h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: -4px;
+    }
+
+    .brand-text p {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--primary);
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .main-nav a:hover::after,
+    .main-nav a.active::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    /* Page Sections */
+    .page {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--bg-muted) 0%, var(--bg) 100%);
+      padding: 140px 2rem 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, var(--accent-light) 0%, transparent 70%);
+      opacity: 0.1;
+      transform: rotate(45deg);
+    }
+
+    .hero-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .lead {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-weight: 400;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      border: 2px solid transparent;
+    }
+
+    .cta-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .cta-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--shadow-medium);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .cta-secondary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Sub Hero */
+    .sub-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      padding: 140px 2rem 80px;
+      color: white;
+      text-align: center;
+    }
+
+    .sub-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .sub-hero .lead {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 100px 2rem;
+    }
+
+    .section-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .section-header .lead {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 2.5rem;
+      box-shadow: 0 4px 30px var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px var(--shadow-medium);
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Two Column Layout */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .feature-content h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .feature-content .lead {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 10px 40px var(--shadow);
+      border-left: 5px solid var(--accent);
+    }
+
+    .testimonial blockquote {
+      font-size: 1.3rem;
+      color: var(--text);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .testimonial cite {
+      color: var(--text-light);
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    /* International Focus Section */
+    .international-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .international-card {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: 0 4px 30px var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .international-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px var(--shadow-medium);
+    }
+
+    .international-card .flag {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .international-card h4 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 60px var(--shadow-medium);
+      border: 3px solid white;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 6rem;
+      font-weight: 300;
+    }
+
+    .team-info h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .team-credentials {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .team-info p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .contact-info {
+      background: var(--bg-muted);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Pricing Card */
+    .pricing-card {
+      background: white;
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 10px 40px var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    .pricing-card h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    /* Muted Section */
+    .section-muted {
+      background: var(--bg-muted);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer p {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 1rem;
+        height: 70px;
+      }
+
+      .brand-text h1 {
+        font-size: 1.2rem;
+      }
+
+      .brand-text p {
+        font-size: 0.8rem;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+      }
+
+      .hero {
+        padding: 120px 1rem 80px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .lead {
+        font-size: 1.1rem;
+      }
+
+      .cta-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section {
+        padding: 60px 1rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .card {
+        padding: 2rem;
+      }
+
+      .two-column,
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .team-photo {
+        height: 400px;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .sub-hero {
+        padding: 120px 1rem 60px;
+      }
+
+      .sub-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .international-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="#" class="brand" onclick="showPage('home')">
+      <div class="logo">E</div>
+      <div class="brand-text">
+        <h1>Excellence at Hand</h1>
+        <p>Tutors & University Preparation</p>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <button class="menu-toggle">☰</button>
+      <ul>
+        <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-page="subjects">Subjects</a></li>
+        <li><a href="#" class="nav-link" data-page="team">Meet the Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+  <section class="hero">
+    <div class="hero-container">
+      <h1 class="reveal">Elite UK Tutors.<br>University-level Clarity.</h1>
+      <p class="lead reveal">
+        Expert tutors from leading UK universities (including Oxford and Cambridge) providing structured, 
+        confidence-building mathematics tuition and strategic university preparation for students worldwide.
+      </p>
+      <div class="cta-group reveal">
+        <a href="#" class="cta cta-primary" onclick="showPage('subjects')">View Subjects & Rates</a>
+        <a href="#" class="cta cta-secondary" onclick="showPage('team')">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-container">
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-icon">📚</div>
+          <h3>Structured & Clear</h3>
+          <p>Elegant explanations, worked examples, and spaced practice—so ideas stick. Our pedagogical approach ensures complex mathematical concepts become intuitive and accessible.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">📈</div>
+          <h3>Progress You Can See</h3>
+          <p>Diagnostic start, tailored plans, and consistent feedback to build momentum. Track your development with measurable milestones and continuous assessment.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🎯</div>
+          <h3>Exam & Admissions Focus</h3>
+          <p>UK curriculum mastery (GCSE/A-Level) plus strategic preparation for competitive university entrance exams including MAT, STEP, and Oxbridge interviews.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="serif">Supporting Students Globally</h2>
+        <p class="lead">Whether you're in the UK or preparing from abroad, we help students achieve their academic goals.</p>
+      </div>
+      
+      <div class="international-cards">
+        <div class="international-card">
+          <div class="flag">🇬🇧</div>
+          <h4>UK Students</h4>
+          <p>GCSE and A-Level Mathematics, Further Mathematics, plus Oxbridge preparation (MAT, STEP, interviews).</p>
+        </div>
+        <div class="international-card">
+          <div class="flag">🌍</div>
+          <h4>International Students</h4>
+          <p>UK university preparation from anywhere in the world. Master the British curriculum and entrance requirements.</p>
+        </div>
+        <div class="international-card">
+          <div class="flag">🎓</div>
+          <h4>University Bound</h4>
+          <p>Strategic preparation for competitive admissions to top UK universities including Oxford, Cambridge, and Russell Group institutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-container">
+      <div class="two-column">
+        <div class="feature-content">
+          <h2 class="serif">What to Expect in the First Lesson</h2>
+          <p class="lead">A quick diagnostic, a clear plan, and immediate wins—so students leave more confident than they arrived.</p>
+          <ul class="feature-list">
+            <li>Friendly diagnostic to pinpoint strengths and gaps</li>
+            <li>Structured roadmap and comprehensive resource pack</li>
+            <li>Actionable practice with immediate feedback loops</li>
+            <li>Personalized learning strategy discussion</li>
+            <li>Clear pathway to your academic goals</li>
+          </ul>
+          <a href="#" class="cta cta-primary" onclick="showPage('subjects')">Start with a Consultation</a>
+        </div>
+        <div class="testimonial reveal">
+          <blockquote>
+            "Professional, calm, and exceptionally clear. My child finally <em>gets</em> it. The structured approach and patient explanations have transformed their confidence in mathematics."
+          </blockquote>
+          <cite>— Parent of Year 12 student</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SUBJECTS PAGE -->
+<div id="subjects" class="page">
+  <section class="sub-hero">
+    <div class="section-container">
+      <h1 class="reveal">Subjects & Levels</h1>
+      <p class="lead reveal">Tailored mathematics tutoring for UK qualifications and strategic university entrance preparation, available worldwide.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="serif">UK Curriculum Excellence</h2>
+        <p class="lead">Master the British education system from anywhere in the world</p>
+      </div>
+      
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-icon">📊</div>
+          <h3>GCSE Mathematics</h3>
+          <p>Foundation to Higher Tier, building fluency with algebra, geometry, and problem-solving. Exam technique and confidence emphasized from day one with systematic approach to all topics. Perfect foundation for A-Level success.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">∫</div>
+          <h3>A-Level Mathematics</h3>
+          <p>Pure Mathematics, Mechanics, and Statistics. Conceptual understanding paired with timed practice and mark-scheme awareness to excel in examinations. Essential for competitive university applications.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">∞</div>
+          <h3>Further Mathematics A-Level</h3>
+          <p>Advanced topics delivered with careful scaffolding and elegant notation to build deep mathematical intuition. Highly valued by top universities and essential for mathematics, physics, and engineering applications.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🎓</div>
+          <h3>University Entrance (MAT / STEP / PAT)</h3>
+          <p>Strategic preparation for Oxford MAT, Cambridge STEP, and Physics PAT. Problem-solving heuristics, worked solutions, and interview-style mathematical reasoning with comprehensive feedback.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🌟</div>
+          <h3>Oxbridge Interview Preparation</h3>
+          <p>Specialized coaching for Oxford and Cambridge mathematics interviews. Practice with real past questions, develop mathematical communication skills, and build confidence for the interview process.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🧠</div>
+          <h3>Study Skills & Academic Mentoring</h3>
+          <p>Academic planning, revision frameworks, and effective study habits that transfer across subjects. Build independence, time management, and lifelong learning strategies for university success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="serif">Global Accessibility</h2>
+        <p class="lead">Online tutoring means world-class UK education expertise, wherever you are</p>
+      </div>
+      
+      <div class="two-column">
+        <div class="feature-content">
+          <h3>For International Families</h3>
+          <ul class="feature-list">
+            <li>UK university application strategy and timeline guidance</li>
+            <li>Understanding UCAS applications and personal statements</li>
+            <li>British curriculum alignment for overseas students</li>
+            <li>Flexible scheduling across time zones</li>
+            <li>Cultural context for UK academic expectations</li>
+          </ul>
+        </div>
+        <div class="feature-content">
+          <h3>For UK Students</h3>
+          <ul class="feature-list">
+            <li>Local exam board expertise (Edexcel, AQA, OCR)</li>
+            <li>School curriculum support and enhancement</li>
+            <li>Preparation for competitive university places</li>
+            <li>Integration with school learning objectives</li>
+            <li>Support for gifted and talented programs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-container">
+      <div class="pricing-card reveal">
+        <h2 class="serif">Rates & Booking</h2>
+        <p><strong>One-to-one online sessions:</strong> Please enquire for current rates and availability.</p>
+        <p>Sessions conducted via professional video conferencing with shared digital whiteboard and resources.</p>
+        <div class="contact-info" style="margin: 2rem 0; background: var(--bg-muted); padding: 2rem; border-radius: var(--border-radius);">
+          <p><strong>Get Started:</strong></p>
+          <p>Email: <a href="mailto:yourname@example.com" style="color: var(--accent); font-weight: 600;">yourname@example.com</a></p>
+          <p>Schedule: <a href="https://calendly.com" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600;">Book a consultation</a></p>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1.5rem;">Bundle packages and term plans available. International payment methods accepted.</p>
+        <div style="margin-top: 2rem;">
+          <a href="mailto:yourname@example.com" class="cta cta-primary">Book Your Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- TEAM PAGE -->
+<div id="team" class="page">
+  <section class="sub-hero">
+    <div class="section-container">
+      <h1 class="reveal">Meet the Team</h1>
+      <p class="lead reveal">Outstanding tutors from leading UK universities, bringing world-class expertise to students globally.</p>
+    </div>
+  </section>
+
+  <section class="section">

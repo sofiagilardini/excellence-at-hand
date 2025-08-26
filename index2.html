@@ -729,6 +729,159 @@
 
   <section class="section">
     <div class="section-container">
+      <div class="team-grid">
+        <div class="team-photo">S</div>
+        <div class="team-info reveal">
+          <h3 class="serif">Sofia Gilardini — Principal Tutor</h3>
+          <p class="team-credentials">Oxford PhD (Statistics & Machine Learning, in progress) · Cambridge MPhil (Machine Learning) · Edinburgh BEng (Electrical & Mechanical Engineering)</p>
+          <p>
+            I combine rigorous mathematical training with practical teaching methods that make concepts intuitive and memorable.
+            Lessons are structured, supportive, and tailored to each student's goals—whether that's building confidence at GCSE,
+            excelling at A-Level, or preparing strategically for university entrance exams.
+          </p>
+          <p>
+            My approach focuses on developing deep understanding rather than superficial memorization, ensuring students not only
+            achieve their immediate academic goals but also build the mathematical thinking skills that will serve them throughout
+            their academic and professional careers.
+          </p>
+          <p>
+            Having navigated the UK education system from undergraduate through to doctoral level at three prestigious institutions,
+            I understand exactly what top universities are looking for and how to prepare students for success at the highest level.
+          </p>
+          <div class="contact-info">
+            <p><strong>Global Online Tutoring Available</strong></p>
+            <p>Sessions conducted worldwide via professional video conferencing</p>
+            <p><strong>To enquire or book a consultation:</strong></p>
+            <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+            <p>Schedule: <a href="https://calendly.com" target="_blank" rel="noopener">Book online consultation</a></p>
+          </div>
+          <a href="#" class="cta cta-primary" onclick="showPage('subjects')">View Subjects & Rates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="serif">Why Choose Excellence at Hand?</h2>
+        <p class="lead">Proven expertise in delivering results for students worldwide</p>
+      </div>
+      
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-icon">🏆</div>
+          <h3>Proven Track Record</h3>
+          <p>Consistently helping students achieve top grades and secure places at competitive universities including Oxford, Cambridge, and Russell Group institutions.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🌐</div>
+          <h3>Global Reach</h3>
+          <p>Online tutoring means we can support students anywhere in the world, with flexible scheduling across time zones and cultural understanding of international contexts.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🎯</div>
+          <h3>Personalized Approach</h3>
+          <p>Every student is unique. We develop tailored learning plans that address individual strengths, challenges, and academic aspirations with precision and care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2025 Excellence at Hand — All rights reserved. Serving students worldwide with premium UK education expertise.</p>
+  </div>
+</footer>
+
+<script>
+// Page Navigation System
+function showPage(pageId) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+  
+  // Show selected page
+  document.getElementById(pageId).classList.add('active');
+  
+  // Update navigation active state
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+  
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Navigation click handlers
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const pageId = this.getAttribute('data-page');
+    showPage(pageId);
+  });
+});
+
+// Header scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll > 100) {
+    header.style.background = 'rgba(254, 254, 254, 0.98)';
+    header.style.boxShadow = '0 2px 20px rgba(26, 35, 50, 0.1)';
+  } else {
+    header.style.background = 'rgba(254, 254, 254, 0.95)';
+    header.style.boxShadow = 'none';
+  }
+  
+  lastScroll = currentScroll;
+});
+
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('.main-nav ul');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+  });
+}
+
+// Add some entrance animations for cards when they come into view
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Apply observer to cards and other animated elements
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.card, .testimonial, .team-info');
+  animatedElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+});
+</script>
+
+</body>
+</html>
+    <div class="section-container">
       <div class="cards-grid">
         <div class="card reveal">
           <div class="card-icon">📚</div>

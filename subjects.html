@@ -3,68 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Subjects & Rates — Excellence at Hand</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Subjects & Rates – Excellence at Hand</title>
   <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand-wrap" href="index.html" aria-label="Home">
+  <div class="nav-container">
+    <a href="index.html" class="brand">
       <img src="EAH_logo.png" alt="Excellence at Hand logo" class="logo">
-      <div class="brand">
-        <div class="title">Excellence at Hand</div>
-        <div class="subtitle">Tutors &amp; University Preparation</div>
+      <div class="brand-text">
+        <h1>Excellence at Hand</h1>
+        <p>Tutors & University Preparation</p>
       </div>
     </a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="subjects.html" class="active">Subjects</a>
-      <a href="team.html">Meet the Team</a>
+    <nav class="main-nav">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html" class="active">Subjects</a></li>
+        <li><a href="team.html">Meet the Team</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 
+<section class="sub-hero">
+  <div class="section-container">
+    <h1 class="reveal">Subjects & Levels</h1>
+    <p class="lead reveal">Tailored mathematics tutoring for UK qualifications and strategic university entrance preparation, available worldwide.</p>
+  </div>
+</section>
+
 <section class="section">
-  <h2>Subjects & levels</h2>
-  <p class="lead">Tailored maths tutoring for school exams and university entrance.</p>
-  <div class="cards">
-    <div class="card">
-      <h3>GCSE Mathematics</h3>
-      <p>Foundation to Higher Tier; fluency in algebra, geometry, and problem-solving. Exam technique built in.</p>
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="serif">UK Curriculum Excellence</h2>
+      <p class="lead">Master the British education system from anywhere in the world</p>
     </div>
-    <div class="card">
-      <h3>A-Level Mathematics</h3>
-      <p>Pure, Mechanics, and Statistics. Conceptual depth plus timed practice and mark-scheme awareness.</p>
+    
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-icon">📊</div>
+        <h3>GCSE Mathematics</h3>
+        <p>Foundation to Higher Tier, building fluency with algebra, geometry, and problem-solving. Exam technique and confidence emphasized from day one with systematic approach to all topics. Perfect foundation for A-Level success.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">∫</div>
+        <h3>A-Level Mathematics</h3>
+        <p>Pure Mathematics, Mechanics, and Statistics. Conceptual understanding paired with timed practice and mark-scheme awareness to excel in examinations. Essential for competitive university applications.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">∞</div>
+        <h3>Further Mathematics A-Level</h3>
+        <p>Advanced topics delivered with careful scaffolding and elegant notation to build deep mathematical intuition. Highly valued by top universities and essential for mathematics, physics, and engineering applications.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🎓</div>
+        <h3>University Entrance (MAT / STEP / PAT)</h3>
+        <p>Strategic preparation for Oxford MAT, Cambridge STEP, and Physics PAT. Problem-solving heuristics, worked solutions, and interview-style mathematical reasoning with comprehensive feedback.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🌟</div>
+        <h3>Oxbridge Interview Preparation</h3>
+        <p>Specialized coaching for Oxford and Cambridge mathematics interviews. Practice with real past questions, develop mathematical communication skills, and build confidence for the interview process.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🧠</div>
+        <h3>Study Skills & Academic Mentoring</h3>
+        <p>Academic planning, revision frameworks, and effective study habits that transfer across subjects. Build independence, time management, and lifelong learning strategies for university success.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Further Mathematics</h3>
-      <p>Advanced topics delivered with careful scaffolding and elegant notation for deeper intuition.</p>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="serif">Global Accessibility</h2>
+      <p class="lead">Online tutoring means world-class UK education expertise, wherever you are</p>
     </div>
-    <div class="card">
-      <h3>University Entrance (MAT / STEP)</h3>
-      <p>Heuristics, solution structure, and reflective debriefs; interview-style reasoning as needed.</p>
-    </div>
-    <div class="card">
-      <h3>Study Skills & Mentoring</h3>
-      <p>Planning, revision frameworks, and feedback habits that transfer across subjects.</p>
+    
+    <div class="two-column">
+      <div class="feature-content">
+        <h3>For International Families</h3>
+        <ul class="feature-list">
+          <li>UK university application strategy and timeline guidance</li>
+          <li>Understanding UCAS applications and personal statements</li>
+          <li>British curriculum alignment for overseas students</li>
+          <li>Flexible scheduling across time zones</li>
+          <li>Cultural context for UK academic expectations</li>
+        </ul>
+      </div>
+      <div class="feature-content">
+        <h3>For UK Students</h3>
+        <ul class="feature-list">
+          <li>Local exam board expertise (Edexcel, AQA, OCR)</li>
+          <li>School curriculum support and enhancement</li>
+          <li>Preparation for competitive university places</li>
+          <li>Integration with school learning objectives</li>
+          <li>Support for gifted and talented programs</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Rates & booking</h2>
-  <div class="card">
-    <p><strong>One-to-one sessions:</strong> please enquire for current rates and availability.</p>
-    <p>Email <a href="mailto:yourname@example.com">yourname@example.com</a> or schedule via <a href="https://calendly.com" target="_blank" rel="noopener">Calendly</a>.</p>
-    <p class="muted" style="color:var(--muted); font-size:.95rem;">Bundle options and term plans available on request.</p>
+  <div class="section-container">
+    <div class="pricing-card reveal">
+      <h2 class="serif">Rates & Booking</h2>
+      <p><strong>One-to-one online sessions:</strong> Please enquire for current rates and availability.</p>
+      <p>Sessions conducted via professional video conferencing with shared digital whiteboard and resources.</p>
+      <div class="contact-info" style="margin: 2rem 0; background: var(--bg-muted); padding: 2rem; border-radius: var(--border-radius);">
+        <p><strong>Get Started:</strong></p>
+        <p>Email: <a href="mailto:yourname@example.com" style="color: var(--accent); font-weight: 600;">yourname@example.com</a></p>
+        <p>Schedule: <a href="https://calendly.com" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600;">Book a consultation</a></p>
+      </div>
+      <p class="small">Bundle packages and term plans available. International payment methods accepted.</p>
+      <div style="margin-top: 2rem;">
+        <a href="mailto:yourname@example.com" class="cta cta-primary">Book Your Consultation</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner">© 2025 Excellence at Hand — All rights reserved.</div>
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2025 Excellence at Hand — All rights reserved. Serving students worldwide with premium UK education expertise.</p>
+  </div>
 </footer>
 
+<script src="script.js" defer></script>
 </body>
 </html>

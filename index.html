@@ -3,86 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Excellence at Hand — Tutors & University Preparation</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Excellence at Hand – Tutors & University Preparation</title>
   <link rel="icon" type="image/png" href="favicon.png"/>
-  <meta name="description" content="High-calibre maths tutoring from tutors with Oxbridge-level training. Clear methods, confidence, and results."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand-wrap" href="index.html" aria-label="Home">
+  <div class="nav-container">
+    <a href="index.html" class="brand">
       <img src="EAH_logo.png" alt="Excellence at Hand logo" class="logo">
-      <div class="brand">
-        <div class="title">Excellence at Hand</div>
-        <div class="subtitle">Tutors &amp; University Preparation</div>
+      <div class="brand-text">
+        <h1>Excellence at Hand</h1>
+        <p>Tutors & University Preparation</p>
       </div>
     </a>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="subjects.html">Subjects</a>
-      <a href="team.html">Meet the Team</a>
+    <nav class="main-nav">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul id="nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="team.html">Meet the Team</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-inner">
-    <h1>Elegant, results-driven maths tutoring</h1>
-    <p class="lead">
-      A small team of tutors from leading UK universities (including Oxford and Cambridge),
-      known for clear explanations, structured practice, and calm confidence-building.
+  <div class="hero-container">
+    <h1 class="reveal">Elite UK Tutors.<br>University-level Clarity.</h1>
+    <p class="lead reveal">
+      Expert tutors from leading UK universities (including Oxford and Cambridge) providing structured, 
+      confidence-building mathematics tuition and strategic university preparation for students worldwide.
     </p>
-    <p style="margin-top:16px;">
-      <a class="cta" href="subjects.html">View Subjects & Rates</a>
-      <a class="cta ghost" href="team.html" style="margin-left:8px;">Meet the Team</a>
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Why parents choose us</h2>
-  <div class="cards">
-    <div class="card">
-      <span class="badge">Clarity</span>
-      <h3>Structured teaching</h3>
-      <p>We break complex ideas into simple, teachable steps and reinforce them with targeted practice.</p>
-    </div>
-    <div class="card">
-      <span class="badge">Confidence</span>
-      <h3>Calm, methodical progress</h3>
-      <p>Students leave lessons knowing what to do next and how to approach problems independently.</p>
-    </div>
-    <div class="card">
-      <span class="badge">Outcomes</span>
-      <h3>Exam & admissions focus</h3>
-      <p>GCSE/A-Level mastery, MAT/STEP strategy, and interview-style reasoning where required.</p>
+    <div class="cta-group reveal">
+      <a href="subjects.html" class="cta cta-primary">View Subjects & Rates</a>
+      <a href="team.html" class="cta cta-secondary">Meet the Team</a>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="split">
-    <div>
-      <h2>First lesson</h2>
-      <p class="lead">A short diagnostic, a clear plan, and immediate wins to build momentum.</p>
-      <ul>
-        <li>Pinpoint strengths and gaps</li>
-        <li>Set a simple study plan</li>
-        <li>Agree short, measurable goals</li>
-      </ul>
-    </div>
-    <div class="quote">
-      “Professional, calm, and exceptionally clear. My child finally <em>gets</em> it.”
-      <div style="color:var(--muted); margin-top:6px;">— Parent of Year 12 student</div>
+  <div class="section-container">
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-icon">📚</div>
+        <h3>Structured & Clear</h3>
+        <p>Elegant explanations, worked examples, and spaced practice—so ideas stick. Our pedagogical approach ensures complex mathematical concepts become intuitive and accessible.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📈</div>
+        <h3>Progress You Can See</h3>
+        <p>Diagnostic start, tailored plans, and consistent feedback to build momentum. Track your development with measurable milestones and continuous assessment.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🎯</div>
+        <h3>Exam & Admissions Focus</h3>
+        <p>UK curriculum mastery (GCSE/A-Level) plus strategic preparation for competitive university entrance exams including MAT, STEP, and Oxbridge interviews.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner">© 2025 Excellence at Hand — All rights reserved.</div>
+<section class="section section-muted">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="serif">Supporting Students Globally</h2>
+      <p class="lead">Whether you're in the UK or preparing from abroad, we help students achieve their academic goals.</p>
+    </div>
+    
+    <div class="international-cards">
+      <div class="international-card reveal">
+        <div class="flag">🇬🇧</div>
+        <h4>UK Students</h4>
+        <p>GCSE and A-Level Mathematics, Further Mathematics, plus Oxbridge preparation (MAT, STEP, interviews).</p>
+      </div>
+      <div class="international-card reveal">
+        <div class="flag">🌍</div>
+        <h4>International Students</h4>
+        <p>UK university preparation from anywhere in the world. Master the British curriculum and entrance requirements.</p>
+      </div>
+      <div class="international-card reveal">
+        <div class="flag">🎓</div>
+        <h4>University Bound</h4>
+        <p>Strategic preparation for competitive admissions to top UK universities including Oxford, Cambridge, and Russell Group institutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-container">
+    <div class="two-column">
+      <div class="feature-content">
+        <h2 class="serif">What to Expect in the First Lesson</h2>
+        <p class="lead">A quick diagnostic, a clear plan, and immediate wins—so students leave more confident than they arrived.</p>
+        <ul class="feature-list">
+          <li>Friendly diagnostic to pinpoint strengths and gaps</li>
+          <li>Structured roadmap and comprehensive resource pack</li>
+          <li>Actionable practice with immediate feedback loops</li>
+          <li>Personalized learning strategy discussion</li>
+          <li>Clear pathway to your academic goals</li>
+        </ul>
+        <a href="subjects.html" class="cta cta-primary">Start with a Consultation</a>
+      </div>
+      <div class="testimonial reveal">
+        <blockquote>
+          "Professional, calm, and exceptionally clear. My child finally <em>gets</em> it. The structured approach and patient explanations have transformed their confidence in mathematics."
+        </blockquote>
+        <cite>— Parent of Year 12 student</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2025 Excellence at Hand — All rights reserved. Serving students worldwide with premium UK education expertise.</p>
+  </div>
 </footer>
 
+<script src="script.js" defer></script>
 </body>
 </html>

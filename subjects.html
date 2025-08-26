@@ -4,55 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Subjects & Rates — Excellence at Hand</title>
-  <link rel="stylesheet" href="style.css"/>
   <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <header class="site-header">
   <div class="nav-wrap">
-    <img src="EAH_logo.png" alt="Excellence at Hand logo" class="logo">
-    <div class="brand">
-      <div class="title">Excellence at Hand</div>
-      <div class="subtitle">Tutors &amp; University Preparation</div>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="subjects.html" class="active">Subjects</a>
-      <a href="team.html">Meet the Team</a>
+    <a class="brand-wrap" href="index.html" aria-label="Excellence at Hand Home">
+      <img src="EAH_logo.png" alt="Excellence at Hand logo" class="logo">
+      <div class="brand">
+        <div class="title">Excellence at Hand</div>
+        <div class="subtitle">Tutors &amp; University Preparation</div>
+      </div>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html" class="active">Subjects</a></li>
+        <li><a href="team.html">Meet the Team</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 
-<section class="section">
-  <h2>Subjects & Levels</h2>
-  <p class="lead">Tailored tutoring for school exams and university entrance.</p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>GCSE Mathematics</h3>
-      <p>Foundation to Higher Tier, strengthening core skills and exam technique.</p>
-    </div>
-    <div class="card">
-      <h3>A-Level Mathematics</h3>
-      <p>Pure, Mechanics, and Statistics with emphasis on problem-solving fluency.</p>
-    </div>
-    <div class="card">
-      <h3>Further Mathematics</h3>
-      <p>Advanced topics delivered with careful scaffolding and clear notation.</p>
-    </div>
-    <div class="card">
-      <h3>University Entrance</h3>
-      <p>STEP / MAT preparation, strategy, timed practice, and feedback loops.</p>
-    </div>
+<section class="sub-hero">
+  <div class="sub-hero-inner">
+    <h1 class="reveal">Subjects & Levels</h1>
+    <p class="lead reveal">Tailored maths tutoring for GCSE and A-Level, plus strategic university entrance preparation.</p>
   </div>
 </section>
 
 <section class="section">
-  <h2>Rates & Booking</h2>
-  <div class="card">
+  <div class="grid-3">
+    <div class="card lift reveal">
+      <h3>GCSE Mathematics</h3>
+      <p>Foundation to Higher Tier, fluency with algebra, geometry, and problem-solving. Exam technique emphasised from day one.</p>
+    </div>
+    <div class="card lift reveal">
+      <h3>A-Level Mathematics</h3>
+      <p>Pure, Mechanics, and Statistics. Conceptual understanding paired with timed practice and mark-scheme awareness.</p>
+    </div>
+    <div class="card lift reveal">
+      <h3>Further Mathematics</h3>
+      <p>Advanced topics delivered with careful scaffolding and elegant notation to build deep intuition.</p>
+    </div>
+    <div class="card lift reveal">
+      <h3>University Entrance (MAT / STEP)</h3>
+      <p>Strategy, heuristics, and worked solutions. Interview-style reasoning and reflective debriefs.</p>
+    </div>
+    <div class="card lift reveal">
+      <h3>Study Skills & Mentoring</h3>
+      <p>Planning, revision frameworks, and feedback habits that transfer across subjects.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section muted">
+  <div class="card big reveal">
+    <h2>Rates & Booking</h2>
     <p><strong>One-to-one sessions:</strong> please enquire for current rates and availability.</p>
-    <p>To book, email <a href="mailto:yourname@example.com">yourname@example.com</a> or schedule via <a href="https://calendly.com" target="_blank">Calendly</a>.</p>
+    <p>Email <a href="mailto:yourname@example.com">yourname@example.com</a> or schedule via <a href="https://calendly.com" target="_blank" rel="noopener">Calendly</a>.</p>
+    <p class="small">Bundle options and term plans available on request.</p>
   </div>
 </section>
 
@@ -60,5 +76,6 @@
   <div class="footer-inner">© 2025 Excellence at Hand — All rights reserved.</div>
 </footer>
 
+<script src="script.js" defer></script>
 </body>
 </html>
